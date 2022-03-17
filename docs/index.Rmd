@@ -1,1 +1,69 @@
+---
+title: "A3: Incarceration"
+output: html_document
+---
+
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+```
+
+```{r, include=FALSE}
+source("summary.R")
+```
+
+### Introduction
+
+This report will be analyzing the population of different races people in jails and prisons of different locations. This dataset records a large amount of data, including the total population of each prison and jail, the population of different ethnic groups, specific information about the prison such as location, size of the city, capacity, etc. The variable we will be using in this report is mostly about the location and population. The location includes state and counties and the population includes the population of different races and genders specifically in jail. Our main focus is on the difference between different races and genders.  
+
+
+### Summary Information
+
+`r county_highest_black_ratio_in_WA` has the highest ratio of black population in Washington jail in the most recent year. And `r year_highest_black_in_King_county` is the year that has the most black population in jail from King county, WA. These two data relfect on the region and the time that where highest portion of black population in jail occured. `r county_highest_female` has the most female population in the US in the most recent year. And for male, `r year_highest_male_ratio` has the highest ratio of male population in jail from King County, WA. Overall, `r county_highest_population` has the most jail population in most recent year. 
+
+### The Dataset
+
+##### Who collected the data?
+Vera institute of justice
+
+##### How was the data collected or generated?  
+The data of prison are collected on NCRP and from state departments of correction when NCRP data doesn't work. The data of jail are draw from ASJ, COJ and the population and admissions variable are draw on DCRP. 
+
+##### Why was the data collected?
+In the history, the incarceration data are mostly state level, which is sufficient and enough for analysis. However, it does not provide much detail about its causes and consequences. They collect the county-level variability to for more robust, theoretically-grounded studies of the high rates of incarceration seen across the United States.
+
+##### How many observations (rows) are in your data?  
+There are 153811 observations in the dataset.
+
+##### How many features (columns) are in the data?  
+There are 121 columns in the data. 
+
+##### What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+This data include the population in jail and prison of different race. It is important for us to avoid racial discrimination. And also, since crime is a sensitive topic, it is important to remain objective in this study. 
+
+##### What are possible limitations or problems with this data?   (at least 200 words)
+The first is that the racial distinction is reflected in the different columns. This makes it more difficult to compare different races. This is because this dataset is a time series of data. Therefore, it places more emphasis on changes over time than on differences in the number of people in each race. Therefore, there are limitations in analyzing the populations of different ethnic groups.
+
+The second limitation is that since this dataset is county-level, it is difficult to calculate state data with county-based time series statistics. 
+
+And because it is time series data, it is difficult for us to compare long time totals across regions. It is also difficult to use this to understand long-term causality.
+
+### Trends Over Time Chart
+``````{r, echo = FALSE, code = readLines("chart1.R")}
+```
+
+This time trend chart shows how the jail population of different varied through 1980 to 2020. It is important to understand how the population of different race varies over time. And also by looking at the line chart, we can easily compare the population among different races. This chart well visualizes how the population changes and flows over time. It also helps to compare the jail population of different races. In this chart, we can clearly see that white jail population is always way higher than other race. And the black remains in the second position. While latinx jail population had a explosive increasing around 1995.
+
+
+### Variable Comparison Chart
+``````{r, echo = FALSE, code = readLines("chart2.R")}
+```
+
+This comparison chart compare the difference in ratio of population between male and female. It is important to compare the ratio of female and male in the jail. And to analyze the composition of population by gender. This chart visualizes the difference between the population ratio of male and female in jail each year. In this chart, we can tell that the male ratio is significantly higher than female. However, the ratio of male is decreasing over time while the ratio of female keeps increasing. But the ratio of male is still way higher than female. 
+
+### Map
+``````{r, echo = FALSE, code = readLines("map.R")}
+```
+
+In this map, it reveals the density of black jail population in different counties in WA. The reason to include this map is to better visualize the situation of black jail population in 2018. By creating this map, we have a better view of the population and geometric places. It also helps us to analyze the cause-and-effect of black jail population. And from this map, we can easily see that the highest black jail population occurs in King County in WA. And there are several other places that are bit darker than other counties. But King County is significantly red and standing out.
+
 
